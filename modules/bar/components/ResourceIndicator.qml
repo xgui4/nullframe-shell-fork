@@ -53,7 +53,7 @@ Item {
                         Layout.topMargin: 3
                         size: 24
                         value: ResourceUsage.cpuUsage
-                        colPrimary:  ResourceUsage.cpuUsage < 0.9 ? Color.surface : "#ffafaf"
+                        colPrimary:  ResourceUsage.cpuUsage < 0.9 ? Color.secondary : Color.tertiary
                         colSecondary: Color.container_high
                         lineWidth: 3
                         Item {
@@ -93,7 +93,7 @@ Item {
                         colPrimary:  ((ResourceUsage.memoryUsedCache - ResourceUsage.memoryUsed) 
                         / (ResourceUsage.memoryTotal - ResourceUsage.memoryUsed)) < 0.5 
                         ? Color.secondary
-                        : Color.error
+                        : Color.tertiary
                         colSecondary: Color.container_high
                         lineWidth: 3
                         sweepDegree: 60
@@ -109,7 +109,7 @@ Item {
                     contentItem: Rectangle {
                         width: parent.width  * parent.visualPosition
                         height: parent.height 
-                        color: (ResourceUsage.swapUsed / ResourceUsage.swapTotal) < 0.5 ? "#ff9f9f" : "#ff2020"
+                        color: (ResourceUsage.swapUsed / ResourceUsage.swapTotal) < 0.5 ? Color.tertiary : Color.error
                         radius: 4
                     }
                     background: Rectangle {
